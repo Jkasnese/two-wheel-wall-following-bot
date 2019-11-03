@@ -82,7 +82,7 @@ def take_action():
 def find_wall():
     msg = Twist()
     msg.linear.x = 0.2
-    msg.angular.z = -0.3
+    msg.angular.z = 0.3
     return msg
 
 def turn_left():
@@ -107,6 +107,7 @@ def main():
     sub = rospy.Subscriber('/m2wr/laser/scan', LaserScan, clbk_laser)
 
     rate = rospy.Rate(20)
+
     while not rospy.is_shutdown():
         msg = Twist()
         if state_ == 0:
