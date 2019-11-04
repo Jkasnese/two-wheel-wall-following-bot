@@ -49,11 +49,14 @@ def take_action():
     angular_z = 0
     state_description = ''
 
-    d = 1.5
+    d = 2
 
-    if regions['front'] > d and regions['fleft'] > d and regions['fright'] > d:
+    if regions['front'] > d and regions['fleft'] > d and regions['fright'] > d and regions['right'] > d:
         state_description = 'case 1 - nothing'
         change_state(0)
+    elif regions['front'] > d and regions['fleft'] > d and regions['fright'] > d and regions['right'] < d:
+        state_description = 'case 1.2 - just passed a wall'
+        change_state(2)
     elif regions['front'] < d and regions['fleft'] > d and regions['fright'] > d:
         state_description = 'case 2 - front'
         change_state(1)
@@ -81,20 +84,21 @@ def take_action():
 
 def find_wall():
     msg = Twist()
-    msg.linear.x = 0.2
-    msg.angular.z = 0.3
+    msg.linear.x = 0.25
+    msg.angular.z = 0.35
     return msg
 
 def turn_left():
     msg = Twist()
-    msg.angular.z = 0.3
+    msg.linear.x = 0.25
+    msg.angular.z = -0.35
     return msg
 
 def follow_the_wall():
     global regions_
 
     msg = Twist()
-    msg.linear.x = 0.5
+    msg.linear.x = 1.5
     return msg
 
 def main():
