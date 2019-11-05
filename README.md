@@ -4,6 +4,46 @@ This is a two-wheeled wall-following robot that uses ROS and Gazebo as its platf
 
 
 
+## Directory Structure
+
+```
+.
++-- README.md
++-- catkin_ws
+|	+-- src
+|	|	+-- motion_plan
+|	|	|	+-- scripts
+|	|	|	|	+-- follow_wall.py
+|	|	|	|	+-- reading_laser.py
++-- simulation_ws
+|   +-- src
+|   |	+-- two-wheeled-robot-simulation
+|	|	|	+-- m2wr_description
+|	|	|	|	+-- launch
+|	|	|	|	|	+-- spawn.launch
+|	|	|	|	+-- urdf
+|	|	|	|	|	+-- m2wr.gazebo
+|	|	|	|	|	+-- m2wr.xacro
+|	|	|	|	|	+-- macros.xacro
+|	|	|	|	|	+-- materials.xacro
+|	|	|	+-- my_worlds
+|	|	|	|	+-- launch
+|	|	|	|	|	+-- acute.launch
+|	|	|	|	|	+-- v_world.launch
+|	|	|	|	|	+-- world1.launch
+|	|	|	|	|	+-- world2.launch
+|	|	|	|	|	+-- world3.launch
+|	|	|	|	+-- worlds
+|	|	|	|	|	+-- 90degrees.world
+|	|	|	|	|	+-- acute.world
+|	|	|	|	|	+-- v_world.world
+|	|	|	|	|	+-- world01.world
+|	|	|	|	|	+-- world02.world
+|	|	|	|	|	+-- world03.world
+```
+
+
+
 ## Requirements
 
 This code was built using ROS Melodic, Gazebo 9.0 and Ubuntu 18.04 LTS. Usage on other configurations aren't ensured to work.
