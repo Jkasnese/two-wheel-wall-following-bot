@@ -6,7 +6,7 @@
   <arg name="gui" default="true"/>
   <arg name="headless" default="false"/>
   <arg name="pause" default="false"/>
-  <arg name="world" default="world02" />
+  <arg name="world" default="acute" />
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
     <arg name="world_name" value="$(find my_worlds)/worlds/$(arg world).world"/>
     <arg name="debug" value="$(arg debug)" />
@@ -14,10 +14,7 @@
     <arg name="paused" value="$(arg pause)"/>
     <arg name="use_sim_time" value="true"/>
     <arg name="headless" value="$(arg headless)"/>
-    <env name="GAZEBO_MODEL_PATH" value="$(find simulation_gazebo)/models:$(optenv GAZEBO_MODEL_PATH)"/>
-  </include>
-  <include file="$(find m2wr_description)/launch/spawn.launch">
-      <arg name="y" value="8" />
+    <env name="GAZEBO_MODEL_PATH" value="~/.gazebo/models:$(optenv GAZEBO_MODEL_PATH)"/>
   </include>
 <!--  Include launch.xml if needed -->
 </launch>

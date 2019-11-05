@@ -49,7 +49,7 @@ def take_action():
     angular_z = 0
     state_description = ''
 
-    d = 2
+    d = 1.5
 
     if regions['front'] > d and regions['fleft'] > d and regions['fright'] > d and regions['right'] > d:
         state_description = 'case 1 - nothing'
@@ -85,13 +85,13 @@ def take_action():
 def find_wall():
     msg = Twist()
     msg.linear.x = 0.25
-    msg.angular.z = 0.35
+    msg.angular.z = 4.5
     return msg
 
 def turn_left():
     msg = Twist()
     msg.linear.x = 0.25
-    msg.angular.z = -0.35
+    msg.angular.z = 4.5
     return msg
 
 def follow_the_wall():
