@@ -4,6 +4,12 @@ This is a two-wheeled wall-following robot that uses ROS and Gazebo as its platf
 
 
 
+## Requirements
+
+This code was built using ROS Melodic, Gazebo 9.0 and Ubuntu 18.04 LTS. Usage on other configurations aren't ensured to work.
+
+
+
 ## Setup 
 
 - exec command *catkin_make* in the catkin_ws/ and simulation_ws/ folders
